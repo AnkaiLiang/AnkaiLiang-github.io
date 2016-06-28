@@ -15,16 +15,55 @@
 
 
 
-<meta name="description" content="大家好， 这是我的第一篇日志。">
+<meta name="description" content="大家好， 这是我的第一篇日志。
+  
+
+  
+
+
+
+
+    $(function(){
+        $(&quot;#starts&quot;).raty({
+            number : 5,//星星个数
+            path : &apos;images&apos;,//图片路径
+            //starOn : &apos;img-full-star.png&apos;,
+            //star">
 <meta property="og:type" content="article">
 <meta property="og:title" content="firstpost">
 <meta property="og:url" content="https://AnkaiLiang.github.io/2016/06/28/firstpost/index.html">
 <meta property="og:site_name" content="Ankai Liang's Blog">
-<meta property="og:description" content="大家好， 这是我的第一篇日志。">
-<meta property="og:updated_time" content="2016-06-28T16:13:13.172Z">
+<meta property="og:description" content="大家好， 这是我的第一篇日志。
+  
+
+  
+
+
+
+
+    $(function(){
+        $(&quot;#starts&quot;).raty({
+            number : 5,//星星个数
+            path : &apos;images&apos;,//图片路径
+            //starOn : &apos;img-full-star.png&apos;,
+            //star">
+<meta property="og:updated_time" content="2016-06-28T19:40:48.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="firstpost">
-<meta name="twitter:description" content="大家好， 这是我的第一篇日志。">
+<meta name="twitter:description" content="大家好， 这是我的第一篇日志。
+  
+
+  
+
+
+
+
+    $(function(){
+        $(&quot;#starts&quot;).raty({
+            number : 5,//星星个数
+            path : &apos;images&apos;,//图片路径
+            //starOn : &apos;img-full-star.png&apos;,
+            //star">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -33,7 +72,7 @@
 
 
 
-    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="shortcut icon" href="/img/favicon.png">
 
 
 
@@ -72,7 +111,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
+        search: undefined
     }
 </script>
 
@@ -106,13 +145,6 @@
         <p class="header-subtitle">强而不燥，弱而不虚</p>
         
 
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -187,7 +219,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/标签云/">标签云</a></li></ul>
                     </div>
                 </section>
                 
@@ -301,30 +333,30 @@
       
           
         <p>大家好， 这是我的第一篇日志。</p>
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>  
 
+<script type="text/javascript" src="js/jquery.raty.js"></script>  
+
+<div id="starts"></div><div id="title"></div>
+
+<script type="text/javascript">
+    $(function(){
+        $("#starts").raty({
+            number : 5,//星星个数
+            path : 'images',//图片路径
+            //starOn : 'img-full-star.png',
+            //starOff : 'img-full-star-grey.png',
+            target : '#title',//
+            hints : ['很差','一般','不错','很好','满意'],
+            click : function(score, evt) {
+                $("#grade").val(score);//
+            }
+        });    
+    });
+</script>
       
     </div>
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>  
-
-    <script type="text/javascript" src="js/jquery.raty.js"></script>  
-
-    <div id="starts"></div><div id="title"></div>
-
-    <script type="text/javascript">
-        $(function(){
-            $("#starts").raty({
-                number : 5,//星星个数
-                path : 'images',//图片路径
-                //starOn : 'img-full-star.png',
-                //starOff : 'img-full-star-grey.png',
-                target : '#title',//
-                hints : ['很差','一般','不错','很好','满意'],
-                click : function(score, evt) {
-                    $("#grade").val(score);//
-                }
-            }); 
-        });
-    </script>
+    
   </div>
   
     
@@ -332,7 +364,7 @@
         <p><span>本文标题:</span><a href="/2016/06/28/firstpost/">firstpost</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Ankai Liang</a></p>
         <p><span>发布时间:</span>2016-06-28, 12:12:44</p>
-        <p><span>最后更新:</span>2016-06-28, 12:13:13</p>
+        <p><span>最后更新:</span>2016-06-28, 15:40:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/06/28/firstpost/" title="firstpost">https://AnkaiLiang.github.io/2016/06/28/firstpost/</a>
             <span class="copy-path" data-clipboard-text="原文: https://AnkaiLiang.github.io/2016/06/28/firstpost/　　作者: Ankai Liang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -346,6 +378,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/28/Tags/">
+                    标签
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -431,7 +469,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/06/28/Tags/" title="上一篇: 标签">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -443,7 +483,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/28/firstpost/">firstpost</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/28/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/28/Tags/">标签</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/28/firstpost/">firstpost</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/28/hello-world/">Hello World</a></li></ul>
 
 
 
