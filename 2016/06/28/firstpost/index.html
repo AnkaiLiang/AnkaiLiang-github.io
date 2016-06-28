@@ -304,7 +304,27 @@
 
       
     </div>
-    
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>  
+
+    <script type="text/javascript" src="js/jquery.raty.js"></script>  
+
+    <div id="starts"></div><div id="title"></div>
+
+    <script type="text/javascript">
+        $(function(){
+            $("#starts").raty({
+                number : 5,//星星个数
+                path : 'images',//图片路径
+                //starOn : 'img-full-star.png',
+                //starOff : 'img-full-star-grey.png',
+                target : '#title',//
+                hints : ['很差','一般','不错','很好','满意'],
+                click : function(score, evt) {
+                    $("#grade").val(score);//
+                }
+            }); 
+        });
+    </script>
   </div>
   
     
