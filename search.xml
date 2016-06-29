@@ -14,12 +14,8 @@
       <title><![CDATA[标签]]></title>
       <url>https://AnkaiLiang.github.io/2016/06/28/Tags/</url>
       <content type="html"><![CDATA[<p>测试一下使用统计插件能否成功</p>
-<p><div class="skillbar clearfix " data-percent="70%"></div></p>
-<p><div class="skillbar-bar" style="background: #e67e22;"><span>得A率</span></div></p>
-<p><div class="skill-bar-percent">中等</div><br> <!-- End Skill Bar --></p>
-<p><div class="skillbar clearfix " data-percent="75%"></div></p>
-<p><div class="skillbar-bar" style="background: #3498db;"><span>作业量</span></div></p>
-<p><div class="skill-bar-percent">较高</div><br> <!-- End Skill Bar --></p>
+<p><div class="skillbar clearfix " data-percent="70%"><br>    <div class="skillbar-bar" style="background: #e67e22;"><span>得A率</span></div><br>    <div class="skill-bar-percent">中等</div><br></div> <!-- End Skill Bar --></p>
+<p><div class="skillbar clearfix " data-percent="75%"><br>    <div class="skillbar-bar" style="background: #3498db;"><span>作业量</span></div><br>    <div class="skill-bar-percent">较高</div><br></div> <!-- End Skill Bar --></p>
 <script src="https://ankailiang.github.io/js/jquery-1.8.3.min.js"></script>
 <script src="https://ankailiang.github.io/js/index.js"></script>]]></content>
     </entry>
