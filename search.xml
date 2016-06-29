@@ -7,7 +7,7 @@
       <title><![CDATA[星星]]></title>
       <url>https://AnkaiLiang.github.io/2016/06/28/star/</url>
       <content type="html"><![CDATA[<p>测试星星</p>
-<script src="https://ankailiang.github.io/js/jquery.raty.js"></script><div id="star"></div><script>$('#star').raty({path:"https://ankailiang.github.io/img",number:2,starOff:'star-off-big.png',starOn:'star-on-big.png',size:45});</script>]]></content>
+<script src="https://ankailiang.github.io/js/jquery.raty.js"></script><div id="star"></div><script>$('#star').raty({path:"https://ankailiang.github.io/img",number:5,score:4,starOff:'star-off-big.png',starOn:'star-on-big.png',size:45});</script>]]></content>
     </entry>
     
     <entry>
