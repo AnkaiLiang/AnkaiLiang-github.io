@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Ankai Liang" />
+
+
+
+<meta name="description" content="CS615 Assignment1 Ankai Liang CWID:10411998 Environment: Mac OS   Install AWS Tool1➜  bin git:(master) sudo pip install awscli --ignore-installed six AWS Command Line Configuration12345➜  bin git:(ma">
+<meta name="keywords" content="System Administration">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Install and Configure AWS Tools">
+<meta property="og:url" content="https://AnkaiLiang.github.io/2017/05/19/Install and Configure AWS Tools/index.html">
+<meta property="og:site_name" content="Ankai Liang&#39;s Blog">
+<meta property="og:description" content="CS615 Assignment1 Ankai Liang CWID:10411998 Environment: Mac OS   Install AWS Tool1➜  bin git:(master) sudo pip install awscli --ignore-installed six AWS Command Line Configuration12345➜  bin git:(ma">
+<meta property="og:updated_time" content="2017-08-17T06:14:03.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Install and Configure AWS Tools">
+<meta name="twitter:description" content="CS615 Assignment1 Ankai Liang CWID:10411998 Environment: Mac OS   Install AWS Tool1➜  bin git:(master) sudo pip install awscli --ignore-installed six AWS Command Line Configuration12345➜  bin git:(ma">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Ankai Liang&#39;s Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Install and Configure AWS Tools | Ankai Liang&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ankai Liang</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">强而不燥，弱而不虚</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/archives/">All Article</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">Resume</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/lakeandgod@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1783077873/profile?rightmod=1&wvr=6&mod=personnumber" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/ankaiLiang" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/lakeandgod" title="Facebook"></a>
+                            
+                                <a class="fa LinkedIn" href="https://www.linkedin.com/in/ankai-liang-a774b3119?trk=hp-identity-name" title="LinkedIn"></a>
+                            
+                                <a class="fa Instagram" href="https://www.instagram.com/ankai_liang/" title="Instagram"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/System-Administration/">System Administration</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://jayveehe.github.io">Jayvee He的博客</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://wangzi6147.github.io">wangzi的博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">true</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ankai Liang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ankai Liang</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">强而不燥，弱而不虚</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives/">All Article</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">Resume</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/lakeandgod@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1783077873/profile?rightmod=1&wvr=6&mod=personnumber" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ankaiLiang" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/lakeandgod" title="Facebook"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://www.linkedin.com/in/ankai-liang-a774b3119?trk=hp-identity-name" title="LinkedIn"></a>
+                            
+                                <a class="fa Instagram" target="_blank" href="https://www.instagram.com/ankai_liang/" title="Instagram"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-Install and Configure AWS Tools" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/19/Install and Configure AWS Tools/" class="article-date">
+      <time datetime="2017-05-19T07:32:39.000Z" itemprop="datePublished">2017-05-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Install and Configure AWS Tools
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/System-Administration/">System Administration</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <a id="more"></a>
+<h1 id="CS615-Assignment1"><a href="#CS615-Assignment1" class="headerlink" title="CS615 Assignment1"></a>CS615 Assignment1</h1><ul>
+<li>Ankai Liang</li>
+<li>CWID:10411998</li>
+<li>Environment: Mac OS </li>
+</ul>
+<h3 id="Install-AWS-Tool"><a href="#Install-AWS-Tool" class="headerlink" title="Install AWS Tool"></a>Install AWS Tool</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  bin git:(master) sudo pip install awscli --ignore-installed six</div></pre></td></tr></table></figure>
+<h3 id="AWS-Command-Line-Configuration"><a href="#AWS-Command-Line-Configuration" class="headerlink" title="AWS Command Line Configuration"></a>AWS Command Line Configuration</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">➜  bin git:(master) aws configure</div><div class="line">AWS Access Key ID [None]: ***</div><div class="line">AWS Secret Access Key [None]: ***</div><div class="line">Default region name [None]: ***</div><div class="line">Default output format [None]: ***</div></pre></td></tr></table></figure>
+<h3 id="Creating-a-Key-Pair-and-setting-the-chomod-mod"><a href="#Creating-a-Key-Pair-and-setting-the-chomod-mod" class="headerlink" title="Creating a Key Pair and setting the chomod mod"></a>Creating a Key Pair and setting the chomod mod</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ aws ec2 create-key-pair --key-name keypair3 --query &apos;KeyMaterial&apos; --output text &gt; p.pem</div><div class="line">➜  Documents git:(master) ✗ chmod 400 p.pem </div><div class="line">➜  Documents git:(master) ✗ aws ec2 create-security-group --group-name mysg --description &quot;My security group&quot; </div><div class="line">&#123;</div><div class="line">    &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Adding-Rules-to-Your-Security-Group"><a href="#Adding-Rules-to-Your-Security-Group" class="headerlink" title="Adding Rules to Your Security Group"></a>Adding Rules to Your Security Group</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ aws ec2 authorize-security-group-ingress --group-name mysg --protocol tcp --port 22 --cidr 0.0.0.0/0</div></pre></td></tr></table></figure>
+<h2 id="CentOS"><a href="#CentOS" class="headerlink" title="CentOS"></a>CentOS</h2><h3 id="Find-images-id-get-ami-50ecc847"><a href="#Find-images-id-get-ami-50ecc847" class="headerlink" title="Find images id (get ami-50ecc847)"></a>Find images id (get ami-50ecc847)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ aws ec2 describe-images --filters &apos;Name=name, Values=OmniOS r151020*&apos; </div><div class="line">&#123;</div><div class="line">    &quot;Images&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;VirtualizationType&quot;: &quot;paravirtual&quot;, </div><div class="line">            &quot;Name&quot;: &quot;OmniOS r151020 Stable 20161102&quot;, </div><div class="line">            &quot;Hypervisor&quot;: &quot;xen&quot;, </div><div class="line">            &quot;ImageId&quot;: &quot;ami-50ecc847&quot;, </div><div class="line">            &quot;RootDeviceType&quot;: &quot;ebs&quot;, </div><div class="line">            &quot;State&quot;: &quot;available&quot;, </div><div class="line">            &quot;BlockDeviceMappings&quot;: [</div><div class="line">                &#123;</div><div class="line">                    &quot;DeviceName&quot;: &quot;/dev/sda&quot;, </div><div class="line">                    &quot;Ebs&quot;: &#123;</div><div class="line">                        &quot;DeleteOnTermination&quot;: true, </div><div class="line">                        &quot;SnapshotId&quot;: &quot;snap-48c359d7&quot;, </div><div class="line">                        &quot;VolumeSize&quot;: 8, </div><div class="line">                        &quot;VolumeType&quot;: &quot;gp2&quot;, </div><div class="line">                        &quot;Encrypted&quot;: false</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            ], </div><div class="line">            &quot;Architecture&quot;: &quot;x86_64&quot;, </div><div class="line">            &quot;ImageLocation&quot;: &quot;182711560792/OmniOS r151020 Stable 20161102&quot;, </div><div class="line">            &quot;KernelId&quot;: &quot;aki-b4aa75dd&quot;, </div><div class="line">            &quot;OwnerId&quot;: &quot;182711560792&quot;, </div><div class="line">            &quot;RootDeviceName&quot;: &quot;/dev/sda&quot;, </div><div class="line">            &quot;CreationDate&quot;: &quot;2016-11-02T19:38:56.000Z&quot;, </div><div class="line">            &quot;Public&quot;: true, </div><div class="line">            &quot;ImageType&quot;: &quot;machine&quot;, </div><div class="line">            &quot;Description&quot;: &quot;OmniOS r151020 Stable created 20161102&quot;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Run-a-instance"><a href="#Run-a-instance" class="headerlink" title="Run a instance"></a>Run a instance</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ aws ec2 run-instances --image-id ami-50ecc847 --count 1 --instance-type t1.micro --key-name keypair3 --security-groups mysg</div><div class="line">&#123;</div><div class="line">    &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">    &quot;ReservationId&quot;: &quot;r-01c81ac895aa8c726&quot;, </div><div class="line">    &quot;Groups&quot;: [], </div><div class="line">    &quot;Instances&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;Monitoring&quot;: &#123;</div><div class="line">                &quot;State&quot;: &quot;disabled&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;PublicDnsName&quot;: &quot;&quot;, </div><div class="line">            &quot;KernelId&quot;: &quot;aki-b4aa75dd&quot;, </div><div class="line">            &quot;State&quot;: &#123;</div><div class="line">                &quot;Code&quot;: 0, </div><div class="line">                &quot;Name&quot;: &quot;pending&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;EbsOptimized&quot;: false, </div><div class="line">            &quot;LaunchTime&quot;: &quot;2017-01-30T02:24:36.000Z&quot;, </div><div class="line">            &quot;PrivateIpAddress&quot;: &quot;172.31.15.139&quot;, </div><div class="line">            &quot;ProductCodes&quot;: [], </div><div class="line">            &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">            &quot;StateTransitionReason&quot;: &quot;&quot;, </div><div class="line">            &quot;InstanceId&quot;: &quot;i-054b740b8e10e8438&quot;, </div><div class="line">            &quot;ImageId&quot;: &quot;ami-50ecc847&quot;, </div><div class="line">            &quot;PrivateDnsName&quot;: &quot;ip-172-31-15-139.ec2.internal&quot;, </div><div class="line">            &quot;KeyName&quot;: &quot;keypair3&quot;, </div><div class="line">            &quot;SecurityGroups&quot;: [</div><div class="line">                &#123;</div><div class="line">                    &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                    &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                &#125;</div><div class="line">            ], </div><div class="line">            &quot;ClientToken&quot;: &quot;&quot;, </div><div class="line">            &quot;SubnetId&quot;: &quot;subnet-6e82bf27&quot;, </div><div class="line">            &quot;InstanceType&quot;: &quot;t1.micro&quot;, </div><div class="line">            &quot;NetworkInterfaces&quot;: [</div><div class="line">                &#123;</div><div class="line">                    &quot;Status&quot;: &quot;in-use&quot;, </div><div class="line">                    &quot;MacAddress&quot;: &quot;0a:16:eb:98:f7:d4&quot;, </div><div class="line">                    &quot;SourceDestCheck&quot;: true, </div><div class="line">                    &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">                    &quot;Description&quot;: &quot;&quot;, </div><div class="line">                    &quot;NetworkInterfaceId&quot;: &quot;eni-2533a1c4&quot;, </div><div class="line">                    &quot;PrivateIpAddresses&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;PrivateDnsName&quot;: &quot;ip-172-31-15-139.ec2.internal&quot;, </div><div class="line">                            &quot;Primary&quot;: true, </div><div class="line">                            &quot;PrivateIpAddress&quot;: &quot;172.31.15.139&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;PrivateDnsName&quot;: &quot;ip-172-31-15-139.ec2.internal&quot;, </div><div class="line">                    &quot;Attachment&quot;: &#123;</div><div class="line">                        &quot;Status&quot;: &quot;attaching&quot;, </div><div class="line">                        &quot;DeviceIndex&quot;: 0, </div><div class="line">                        &quot;DeleteOnTermination&quot;: true, </div><div class="line">                        &quot;AttachmentId&quot;: &quot;eni-attach-6cd9522f&quot;, </div><div class="line">                        &quot;AttachTime&quot;: &quot;2017-01-30T02:24:36.000Z&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;Groups&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                            &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;Ipv6Addresses&quot;: [], </div><div class="line">                    &quot;SubnetId&quot;: &quot;subnet-6e82bf27&quot;, </div><div class="line">                    &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">                    &quot;PrivateIpAddress&quot;: &quot;172.31.15.139&quot;</div><div class="line">                &#125;</div><div class="line">            ], </div><div class="line">            &quot;SourceDestCheck&quot;: true, </div><div class="line">            &quot;Placement&quot;: &#123;</div><div class="line">                &quot;Tenancy&quot;: &quot;default&quot;, </div><div class="line">                &quot;GroupName&quot;: &quot;&quot;, </div><div class="line">                &quot;AvailabilityZone&quot;: &quot;us-east-1a&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;Hypervisor&quot;: &quot;xen&quot;, </div><div class="line">            &quot;BlockDeviceMappings&quot;: [], </div><div class="line">            &quot;Architecture&quot;: &quot;x86_64&quot;, </div><div class="line">            &quot;StateReason&quot;: &#123;</div><div class="line">                &quot;Message&quot;: &quot;pending&quot;, </div><div class="line">                &quot;Code&quot;: &quot;pending&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;RootDeviceName&quot;: &quot;/dev/sda&quot;, </div><div class="line">            &quot;VirtualizationType&quot;: &quot;paravirtual&quot;, </div><div class="line">            &quot;RootDeviceType&quot;: &quot;ebs&quot;, </div><div class="line">            &quot;AmiLaunchIndex&quot;: 0</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Create-a-Tag-for-my-Instance"><a href="#Create-a-Tag-for-my-Instance" class="headerlink" title="Create a Tag for my Instance"></a>Create a Tag for my Instance</h3><p>From above: “InstanceId”: “i-054b740b8e10e8438”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ aws ec2 create-tags --resources i-054b740b8e10e8438 --tags Key=Name,Value=MyInstance</div></pre></td></tr></table></figure></p>
+<h3 id="Get-the-info-of-my-Instance"><a href="#Get-the-info-of-my-Instance" class="headerlink" title="Get the info of my Instance"></a>Get the info of my Instance</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ aws ec2 describe-instances --filters &quot;Name=instance-id,Values=i-054b740b8e10e8438&quot;</div><div class="line">&#123;</div><div class="line">    &quot;Reservations&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">            &quot;ReservationId&quot;: &quot;r-01c81ac895aa8c726&quot;, </div><div class="line">            &quot;Groups&quot;: [], </div><div class="line">            &quot;Instances&quot;: [</div><div class="line">                &#123;</div><div class="line">                    &quot;Monitoring&quot;: &#123;</div><div class="line">                        &quot;State&quot;: &quot;disabled&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;PublicDnsName&quot;: &quot;ec2-54-89-190-118.compute-1.amazonaws.com&quot;, </div><div class="line">                    &quot;RootDeviceType&quot;: &quot;ebs&quot;, </div><div class="line">                    &quot;State&quot;: &#123;</div><div class="line">                        &quot;Code&quot;: 16, </div><div class="line">                        &quot;Name&quot;: &quot;running&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;EbsOptimized&quot;: false, </div><div class="line">                    &quot;LaunchTime&quot;: &quot;2017-01-30T02:24:36.000Z&quot;, </div><div class="line">                    &quot;PublicIpAddress&quot;: &quot;54.89.190.118&quot;, </div><div class="line">                    &quot;PrivateIpAddress&quot;: &quot;172.31.15.139&quot;, </div><div class="line">                    &quot;ProductCodes&quot;: [], </div><div class="line">                    &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">                    &quot;StateTransitionReason&quot;: &quot;&quot;, </div><div class="line">                    &quot;InstanceId&quot;: &quot;i-054b740b8e10e8438&quot;, </div><div class="line">                    &quot;ImageId&quot;: &quot;ami-50ecc847&quot;, </div><div class="line">                    &quot;PrivateDnsName&quot;: &quot;ip-172-31-15-139.ec2.internal&quot;, </div><div class="line">                    &quot;KeyName&quot;: &quot;keypair3&quot;, </div><div class="line">                    &quot;SecurityGroups&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                            &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;ClientToken&quot;: &quot;&quot;, </div><div class="line">                    &quot;SubnetId&quot;: &quot;subnet-6e82bf27&quot;, </div><div class="line">                    &quot;InstanceType&quot;: &quot;t1.micro&quot;, </div><div class="line">                    &quot;NetworkInterfaces&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;Status&quot;: &quot;in-use&quot;, </div><div class="line">                            &quot;MacAddress&quot;: &quot;0a:16:eb:98:f7:d4&quot;, </div><div class="line">                            &quot;SourceDestCheck&quot;: true, </div><div class="line">                            &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">                            &quot;Description&quot;: &quot;&quot;, </div><div class="line">                            &quot;Association&quot;: &#123;</div><div class="line">                                &quot;PublicIp&quot;: &quot;54.89.190.118&quot;, </div><div class="line">                                &quot;PublicDnsName&quot;: &quot;ec2-54-89-190-118.compute-1.amazonaws.com&quot;, </div><div class="line">                                &quot;IpOwnerId&quot;: &quot;amazon&quot;</div><div class="line">                            &#125;, </div><div class="line">                            &quot;NetworkInterfaceId&quot;: &quot;eni-2533a1c4&quot;, </div><div class="line">                            &quot;PrivateIpAddresses&quot;: [</div><div class="line">                                &#123;</div><div class="line">                                    &quot;PrivateDnsName&quot;: &quot;ip-172-31-15-139.ec2.internal&quot;, </div><div class="line">                                    &quot;Association&quot;: &#123;</div><div class="line">                                        &quot;PublicIp&quot;: &quot;54.89.190.118&quot;, </div><div class="line">                                        &quot;PublicDnsName&quot;: &quot;ec2-54-89-190-118.compute-1.amazonaws.com&quot;, </div><div class="line">                                        &quot;IpOwnerId&quot;: &quot;amazon&quot;</div><div class="line">                                    &#125;, </div><div class="line">                                    &quot;Primary&quot;: true, </div><div class="line">                                    &quot;PrivateIpAddress&quot;: &quot;172.31.15.139&quot;</div><div class="line">                                &#125;</div><div class="line">                            ], </div><div class="line">                            &quot;PrivateDnsName&quot;: &quot;ip-172-31-15-139.ec2.internal&quot;, </div><div class="line">                            &quot;Attachment&quot;: &#123;</div><div class="line">                                &quot;Status&quot;: &quot;attached&quot;, </div><div class="line">                                &quot;DeviceIndex&quot;: 0, </div><div class="line">                                &quot;DeleteOnTermination&quot;: true, </div><div class="line">                                &quot;AttachmentId&quot;: &quot;eni-attach-6cd9522f&quot;, </div><div class="line">                                &quot;AttachTime&quot;: &quot;2017-01-30T02:24:36.000Z&quot;</div><div class="line">                            &#125;, </div><div class="line">                            &quot;Groups&quot;: [</div><div class="line">                                &#123;</div><div class="line">                                    &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                                    &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                                &#125;</div><div class="line">                            ], </div><div class="line">                            &quot;Ipv6Addresses&quot;: [], </div><div class="line">                            &quot;SubnetId&quot;: &quot;subnet-6e82bf27&quot;, </div><div class="line">                            &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">                            &quot;PrivateIpAddress&quot;: &quot;172.31.15.139&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;SourceDestCheck&quot;: true, </div><div class="line">                    &quot;Placement&quot;: &#123;</div><div class="line">                        &quot;Tenancy&quot;: &quot;default&quot;, </div><div class="line">                        &quot;GroupName&quot;: &quot;&quot;, </div><div class="line">                        &quot;AvailabilityZone&quot;: &quot;us-east-1a&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;Hypervisor&quot;: &quot;xen&quot;, </div><div class="line">                    &quot;BlockDeviceMappings&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;DeviceName&quot;: &quot;/dev/sda&quot;, </div><div class="line">                            &quot;Ebs&quot;: &#123;</div><div class="line">                                &quot;Status&quot;: &quot;attached&quot;, </div><div class="line">                                &quot;DeleteOnTermination&quot;: true, </div><div class="line">                                &quot;VolumeId&quot;: &quot;vol-0582ffa74b5a1b765&quot;, </div><div class="line">                                &quot;AttachTime&quot;: &quot;2017-01-30T02:24:37.000Z&quot;</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;Architecture&quot;: &quot;x86_64&quot;, </div><div class="line">                    &quot;KernelId&quot;: &quot;aki-b4aa75dd&quot;, </div><div class="line">                    &quot;RootDeviceName&quot;: &quot;/dev/sda&quot;, </div><div class="line">                    &quot;VirtualizationType&quot;: &quot;paravirtual&quot;, </div><div class="line">                    &quot;AmiLaunchIndex&quot;: 0</div><div class="line">                &#125;</div><div class="line">            ]</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="SSH-to-Instance-and-Check-the-info"><a href="#SSH-to-Instance-and-Check-the-info" class="headerlink" title="SSH to Instance and Check the info"></a>SSH to Instance and Check the info</h3><p>From above:<br>“PublicDnsName”: “ec2-54-89-190-118.compute-1.amazonaws.com”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ ssh -i p.pem root@ec2-54-89-190-118.compute-1.amazonaws.com</div><div class="line">Last login: Mon Jan 30 02:52:26 2017 from 100.1.162.250</div><div class="line">OmniOS 5.11     omnios-r151020-b5b8c75  November 2016</div><div class="line">root@ip-10-152-178-106.ec2.internal:/root# uname -a</div><div class="line">SunOS ip-10-152-178-106.ec2.internal 5.11 omnios-r151020-b5b8c75 i86pc i386 i86xpv</div><div class="line">root@ip-10-152-178-106.ec2.internal:/root# whoami</div><div class="line">root</div><div class="line">root@ip-10-152-178-106.ec2.internal:/root# date</div><div class="line">January 30, 2017 03:23:12 AM </div><div class="line">root@ip-10-152-178-106.ec2.internal:/root# w</div><div class="line">03:23:18    up 57 min(s),  2 users,  load average: 0.00, 0.00, 0.00</div><div class="line">User     tty      login@         idle    JCPU    PCPU what</div><div class="line">root     pts/1    02:52:27         30       0       0 -bash</div><div class="line">root     pts/2    03:22:13          0       0       0 w</div><div class="line">root@ip-10-152-178-106.ec2.internal:/root# ifconfig -a</div><div class="line">lo0: flags=2001000849&lt;UP,LOOPBACK,RUNNING,MULTICAST,IPv4,VIRTUAL&gt; mtu 8232 index 1</div><div class="line">        inet 127.0.0.1 netmask ff000000 </div><div class="line">xnf0: flags=1004843&lt;UP,BROADCAST,RUNNING,MULTICAST,DHCP,IPv4&gt; mtu 1500 index 2</div><div class="line">        inet 172.31.15.139 netmask fffff000 broadcast 172.31.15.255</div><div class="line">        ether a:16:eb:98:f7:d4 </div><div class="line">lo0: flags=2002000849&lt;UP,LOOPBACK,RUNNING,MULTICAST,IPv6,VIRTUAL&gt; mtu 8252 index 1</div><div class="line">        inet6 ::1/128 </div><div class="line">xnf0: flags=20002000840&lt;RUNNING,MULTICAST,IPv6&gt; mtu 1500 index 2</div><div class="line">        inet6 ::/0 </div><div class="line">        ether a:16:eb:98:f7:d4 </div><div class="line">root@ip-10-152-178-106.ec2.internal:/root# netstat -na</div><div class="line"></div><div class="line">UDP: IPv4</div><div class="line">   Local Address        Remote Address      State</div><div class="line">-------------------- -------------------- ----------</div><div class="line">      *.68                                Idle</div><div class="line">      *.546                               Idle</div><div class="line">172.31.15.139.68                          Idle</div><div class="line">      *.111                               Idle</div><div class="line">      *.*                                 Unbound</div><div class="line">      *.50058                             Idle</div><div class="line">      *.111                               Idle</div><div class="line">      *.*                                 Unbound</div><div class="line">      *.45332                             Idle</div><div class="line">      *.*                                 Unbound</div><div class="line"></div><div class="line">UDP: IPv6</div><div class="line">   Local Address                     Remote Address                   State      If</div><div class="line">--------------------------------- --------------------------------- ---------- -----</div><div class="line">      *.546                                                         Idle       </div><div class="line">      *.111                                                         Idle       </div><div class="line">      *.*                                                           Unbound    </div><div class="line">      *.50058                                                       Idle       </div><div class="line">      *.*                                                           Unbound    </div><div class="line"></div><div class="line">TCP: IPv4</div><div class="line">   Local Address        Remote Address    Swind Send-Q Rwind Recv-Q    State</div><div class="line">-------------------- -------------------- ----- ------ ----- ------ -----------</div><div class="line">127.0.0.1.4999             *.*                0      0 128000      0 LISTEN</div><div class="line">      *.111                *.*                0      0 128000      0 LISTEN</div><div class="line">      *.*                  *.*                0      0 128000      0 IDLE</div><div class="line">      *.111                *.*                0      0 128000      0 LISTEN</div><div class="line">      *.*                  *.*                0      0 128000      0 IDLE</div><div class="line">      *.56771              *.*                0      0 128000      0 LISTEN</div><div class="line">      *.36196              *.*                0      0 128000      0 LISTEN</div><div class="line">      *.22                 *.*                0      0 128000      0 LISTEN</div><div class="line">172.31.15.139.22     100.1.162.250.59344  130976      0 128872      0 ESTABLISHED</div><div class="line">172.31.15.139.22     98.109.151.68.59431  131072     35 128872      0 ESTABLISHED</div><div class="line"></div><div class="line">TCP: IPv6</div><div class="line">   Local Address                     Remote Address                 Swind Send-Q Rwind Recv-Q   State      If</div><div class="line">--------------------------------- --------------------------------- ----- ------ ----- ------ ----------- -----</div><div class="line">      *.111                             *.*                             0      0 128000      0 LISTEN      </div><div class="line">      *.*                               *.*                             0      0 128000      0 IDLE        </div><div class="line">      *.36196                           *.*                             0      0 128000      0 LISTEN      </div><div class="line">      *.22                              *.*                             0      0 128000      0 LISTEN      </div><div class="line"></div><div class="line">Active UNIX domain sockets</div><div class="line">Address  Type          Vnode     Conn  Local Addr      Remote Addr</div><div class="line">ffffff00a8af4020 dgram      ffffff00a8c77600 0000000 /var/run/in.ndpd_mib                </div><div class="line">ffffff00a8af43d0 stream-ord ffffff00a8c77800 0000000 /var/run/in.ndpd_ipadm                </div><div class="line">ffffff00a8af4780 stream-ord ffffff00a8bad040 0000000 /var/run/.inetd.uds                </div><div class="line">ffffff00a8af4b30 stream-ord 0000000 0000000 /var/run/hald/dbus-PSIt9xbdm8                </div><div class="line">ffffff00a8ac4018 stream-ord 0000000 0000000 /var/run/dbus/system_bus_socket                </div><div class="line">ffffff00a8ac43c8 stream-ord 0000000 ffffff00a873c680                /var/run/dbus/system_bus_socket </div><div class="line">ffffff00a8ac4778 stream-ord 0000000 ffffff00a8a35280                /var/run/hald/dbus-PSIt9xbdm8 </div><div class="line">ffffff00a8ac4b28 stream-ord 0000000 0000000 /var/run/hald/dbus-PSIt9xbdm8                </div><div class="line">ffffff00a8a8e010 stream-ord 0000000 ffffff00a8a35280                /var/run/hald/dbus-PSIt9xbdm8 </div><div class="line">ffffff00a8a8e3c0 stream-ord 0000000 0000000 /var/run/hald/dbus-s4jHYz6LbO                </div><div class="line">ffffff00a8a8e770 stream-ord 0000000 ffffff00a8a32400                /var/run/hald/dbus-s4jHYz6LbO </div><div class="line">ffffff00a8a8eb20 stream-ord ffffff00a8a32400 0000000 /var/run/hald/dbus-s4jHYz6LbO                </div><div class="line">ffffff00a7c4e008 stream-ord 0000000 0000000                               </div><div class="line">ffffff00a7c4e3b8 stream-ord 0000000 0000000                               </div><div class="line">ffffff00a7c4e768 stream-ord ffffff00a8a35280 0000000 /var/run/hald/dbus-PSIt9xbdm8                </div><div class="line">ffffff00a7c4eb18 stream-ord ffffff00a873c680 0000000 /var/run/dbus/system_bus_socket</div></pre></td></tr></table></figure>
+<h3 id="Display-the-partition-table-currently-mounted-filesystems-disk-space"><a href="#Display-the-partition-table-currently-mounted-filesystems-disk-space" class="headerlink" title="Display the partition table, currently mounted filesystems, disk space"></a>Display the partition table, currently mounted filesystems, disk space</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">root@ip-10-152-178-106.ec2.internal:/root# format -M</div><div class="line">Searching for disks...</div><div class="line">No request sense for command inquiry</div><div class="line">Inquiry failed</div><div class="line"></div><div class="line">Inquiry failed - Inappropriate ioctl for device</div><div class="line">done</div><div class="line"></div><div class="line"></div><div class="line">AVAILABLE DISK SELECTIONS:</div><div class="line">       0. c1t2048d0 &lt;Unknown-Unknown-0001 cyl 4085 alt 2 hd 128 sec 32&gt;</div><div class="line">          /xpvd/xdf@2048</div><div class="line">Specify disk (enter its number): 0</div><div class="line">selecting c1t2048d0</div><div class="line">[disk formatted, no defect list found]</div><div class="line">             Total disk size is 4096 cylinders</div><div class="line">             Cylinder size is 4096 (512 byte) blocks</div><div class="line"></div><div class="line">                                               Cylinders</div><div class="line">      Partition   Status    Type          Start   End   Length    %</div><div class="line">      =========   ======    ============  =====   ===   ======   ===</div><div class="line">          1                 DOS-BIG           0     7       8      0</div><div class="line">          2                 Solaris2          8  4095    4088    100</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">SELECT ONE OF THE FOLLOWING:</div><div class="line">   1. Create a partition</div><div class="line">   2. Specify the active partition</div><div class="line">   3. Delete a partition</div><div class="line">   4. Change between Solaris and Solaris2 Partition IDs</div><div class="line">   5. Edit/View extended partitions</div><div class="line">   6. Exit (update disk configuration and exit)</div><div class="line">   7. Cancel (exit without updating disk configuration)</div><div class="line">Enter Selection: 7</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">root@ip-10-152-178-106.ec2.internal:/root# mount</div><div class="line">/ on syspool/ROOT/omnios-r151020-1 read/write/setuid/devices/dev=1710002 on Thu Jan  1 00:00:00 1970</div><div class="line">/devices on /devices read/write/setuid/devices/dev=8340000 on Mon Jan 30 02:26:31 2017</div><div class="line">/dev on /dev read/write/setuid/devices/dev=8380000 on Mon Jan 30 02:26:31 2017</div><div class="line">/system/contract on ctfs read/write/setuid/devices/dev=8440001 on Mon Jan 30 02:26:32 2017</div><div class="line">/proc on proc read/write/setuid/devices/dev=83c0000 on Mon Jan 30 02:26:32 2017</div><div class="line">/etc/mnttab on mnttab read/write/setuid/devices/dev=8480001 on Mon Jan 30 02:26:32 2017</div><div class="line">/etc/svc/volatile on swap read/write/setuid/devices/xattr/dev=84c0001 on Mon Jan 30 02:26:32 2017</div><div class="line">/system/object on objfs read/write/setuid/devices/dev=8500001 on Mon Jan 30 02:26:32 2017</div><div class="line">/system/boot on bootfs read/write/setuid/devices/dev=8540001 on Mon Jan 30 02:26:32 2017</div><div class="line">/etc/dfs/sharetab on sharefs read/write/setuid/devices/dev=8580001 on Mon Jan 30 02:26:32 2017</div><div class="line">/lib/libc.so.1 on /usr/lib/libc/libc_hwcap3.so.1 read/write/setuid/devices/dev=1710002 on Mon Jan 30 02:27:04 2017</div><div class="line">/dev/fd on fd read/write/setuid/devices/dev=8680001 on Mon Jan 30 02:27:09 2017</div><div class="line">/tmp on swap read/write/setuid/devices/xattr/dev=84c0002 on Mon Jan 30 02:27:09 2017</div><div class="line">/var/run on swap read/write/setuid/devices/xattr/dev=84c0003 on Mon Jan 30 02:27:09 2017</div><div class="line">/syspool on syspool read/write/setuid/devices/nonbmand/exec/xattr/atime/dev=1710007 on Mon Jan 30 02:27:15 2017</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">root@ip-10-152-178-106.ec2.internal:/root# df -h</div><div class="line">Filesystem             Size   Used  Available Capacity  Mounted on</div><div class="line">syspool/ROOT/omnios-r151020-1</div><div class="line">                       7.7G   864M       6.3G    12%    /</div><div class="line">/devices                 0K     0K         0K     0%    /devices</div><div class="line">/dev                     0K     0K         0K     0%    /dev</div><div class="line">ctfs                     0K     0K         0K     0%    /system/contract</div><div class="line">proc                     0K     0K         0K     0%    /proc</div><div class="line">mnttab                   0K     0K         0K     0%    /etc/mnttab</div><div class="line">swap                   261M   292K       261M     1%    /etc/svc/volatile</div><div class="line">objfs                    0K     0K         0K     0%    /system/object</div><div class="line">bootfs                   0K     0K         0K     0%    /system/boot</div><div class="line">sharefs                  0K     0K         0K     0%    /etc/dfs/sharetab</div><div class="line">/usr/lib/libc/libc_hwcap3.so.1</div><div class="line">                       7.2G   864M       6.3G    12%    /lib/libc.so.1</div><div class="line">fd                       0K     0K         0K     0%    /dev/fd</div><div class="line">swap                   261M     0K       261M     0%    /tmp</div><div class="line">swap                   261M    32K       261M     1%    /var/run</div><div class="line">syspool                7.7G    30K       6.3G     1%    /syspool</div></pre></td></tr></table></figure>
+<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><h3 id="Images-Select"><a href="#Images-Select" class="headerlink" title="Images Select"></a>Images Select</h3><p>Amazon Linux AMI 2016.09.1 (HVM), SSD Volume Type - ami-0b33d91d</p>
+<h3 id="Run-a-instance-1"><a href="#Run-a-instance-1" class="headerlink" title="Run a instance"></a>Run a instance</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div></pre></td><td class="code"><pre><div class="line">➜  bin git:(master) ✗ aws ec2 run-instances --image-id ami-0b33d91d --count 1 --instance-type t2.micro --key-name keypair3 --security-groups mysg</div><div class="line">&#123;</div><div class="line">    &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">    &quot;ReservationId&quot;: &quot;r-081d903479e0a8659&quot;, </div><div class="line">    &quot;Groups&quot;: [], </div><div class="line">    &quot;Instances&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;Monitoring&quot;: &#123;</div><div class="line">                &quot;State&quot;: &quot;disabled&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;PublicDnsName&quot;: &quot;&quot;, </div><div class="line">            &quot;RootDeviceType&quot;: &quot;ebs&quot;, </div><div class="line">            &quot;State&quot;: &#123;</div><div class="line">                &quot;Code&quot;: 0, </div><div class="line">                &quot;Name&quot;: &quot;pending&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;EbsOptimized&quot;: false, </div><div class="line">            &quot;LaunchTime&quot;: &quot;2017-01-30T04:40:43.000Z&quot;, </div><div class="line">            &quot;PrivateIpAddress&quot;: &quot;172.31.25.111&quot;, </div><div class="line">            &quot;ProductCodes&quot;: [], </div><div class="line">            &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">            &quot;StateTransitionReason&quot;: &quot;&quot;, </div><div class="line">            &quot;InstanceId&quot;: &quot;i-0f34e210bdf46cf93&quot;, </div><div class="line">            &quot;ImageId&quot;: &quot;ami-0b33d91d&quot;, </div><div class="line">            &quot;PrivateDnsName&quot;: &quot;ip-172-31-25-111.ec2.internal&quot;, </div><div class="line">            &quot;KeyName&quot;: &quot;keypair3&quot;, </div><div class="line">            &quot;SecurityGroups&quot;: [</div><div class="line">                &#123;</div><div class="line">                    &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                    &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                &#125;</div><div class="line">            ], </div><div class="line">            &quot;ClientToken&quot;: &quot;&quot;, </div><div class="line">            &quot;SubnetId&quot;: &quot;subnet-09dda752&quot;, </div><div class="line">            &quot;InstanceType&quot;: &quot;t2.micro&quot;, </div><div class="line">            &quot;NetworkInterfaces&quot;: [</div><div class="line">                &#123;</div><div class="line">                    &quot;Status&quot;: &quot;in-use&quot;, </div><div class="line">                    &quot;MacAddress&quot;: &quot;0e:7e:53:40:0a:26&quot;, </div><div class="line">                    &quot;SourceDestCheck&quot;: true, </div><div class="line">                    &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">                    &quot;Description&quot;: &quot;&quot;, </div><div class="line">                    &quot;NetworkInterfaceId&quot;: &quot;eni-274dd2e2&quot;, </div><div class="line">                    &quot;PrivateIpAddresses&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;PrivateDnsName&quot;: &quot;ip-172-31-25-111.ec2.internal&quot;, </div><div class="line">                            &quot;Primary&quot;: true, </div><div class="line">                            &quot;PrivateIpAddress&quot;: &quot;172.31.25.111&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;PrivateDnsName&quot;: &quot;ip-172-31-25-111.ec2.internal&quot;, </div><div class="line">                    &quot;Attachment&quot;: &#123;</div><div class="line">                        &quot;Status&quot;: &quot;attaching&quot;, </div><div class="line">                        &quot;DeviceIndex&quot;: 0, </div><div class="line">                        &quot;DeleteOnTermination&quot;: true, </div><div class="line">                        &quot;AttachmentId&quot;: &quot;eni-attach-7eccda21&quot;, </div><div class="line">                        &quot;AttachTime&quot;: &quot;2017-01-30T04:40:43.000Z&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;Groups&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                            &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;Ipv6Addresses&quot;: [], </div><div class="line">                    &quot;SubnetId&quot;: &quot;subnet-09dda752&quot;, </div><div class="line">                    &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">                    &quot;PrivateIpAddress&quot;: &quot;172.31.25.111&quot;</div><div class="line">                &#125;</div><div class="line">            ], </div><div class="line">            &quot;SourceDestCheck&quot;: true, </div><div class="line">            &quot;Placement&quot;: &#123;</div><div class="line">                &quot;Tenancy&quot;: &quot;default&quot;, </div><div class="line">                &quot;GroupName&quot;: &quot;&quot;, </div><div class="line">                &quot;AvailabilityZone&quot;: &quot;us-east-1b&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;Hypervisor&quot;: &quot;xen&quot;, </div><div class="line">            &quot;BlockDeviceMappings&quot;: [], </div><div class="line">            &quot;Architecture&quot;: &quot;x86_64&quot;, </div><div class="line">            &quot;StateReason&quot;: &#123;</div><div class="line">                &quot;Message&quot;: &quot;pending&quot;, </div><div class="line">                &quot;Code&quot;: &quot;pending&quot;</div><div class="line">            &#125;, </div><div class="line">            &quot;RootDeviceName&quot;: &quot;/dev/xvda&quot;, </div><div class="line">            &quot;VirtualizationType&quot;: &quot;hvm&quot;, </div><div class="line">            &quot;AmiLaunchIndex&quot;: 0</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Get-the-info-of-my-Instance-1"><a href="#Get-the-info-of-my-Instance-1" class="headerlink" title="Get the info of my Instance"></a>Get the info of my Instance</h3><p>From above: “InstanceId”: “i-0f34e210bdf46cf93”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">➜  bin git:(master) ✗ aws ec2 describe-instances --filters &quot;Name=instance-id,Values=i-0f34e210bdf46cf93&quot;</div><div class="line">&#123;</div><div class="line">    &quot;Reservations&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">            &quot;ReservationId&quot;: &quot;r-081d903479e0a8659&quot;, </div><div class="line">            &quot;Groups&quot;: [], </div><div class="line">            &quot;Instances&quot;: [</div><div class="line">                &#123;</div><div class="line">                    &quot;Monitoring&quot;: &#123;</div><div class="line">                        &quot;State&quot;: &quot;disabled&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;PublicDnsName&quot;: &quot;ec2-52-207-16-176.compute-1.amazonaws.com&quot;, </div><div class="line">                    &quot;State&quot;: &#123;</div><div class="line">                        &quot;Code&quot;: 16, </div><div class="line">                        &quot;Name&quot;: &quot;running&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;EbsOptimized&quot;: false, </div><div class="line">                    &quot;LaunchTime&quot;: &quot;2017-01-30T04:40:43.000Z&quot;, </div><div class="line">                    &quot;PublicIpAddress&quot;: &quot;52.207.16.176&quot;, </div><div class="line">                    &quot;PrivateIpAddress&quot;: &quot;172.31.25.111&quot;, </div><div class="line">                    &quot;ProductCodes&quot;: [], </div><div class="line">                    &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">                    &quot;StateTransitionReason&quot;: &quot;&quot;, </div><div class="line">                    &quot;InstanceId&quot;: &quot;i-0f34e210bdf46cf93&quot;, </div><div class="line">                    &quot;EnaSupport&quot;: true, </div><div class="line">                    &quot;ImageId&quot;: &quot;ami-0b33d91d&quot;, </div><div class="line">                    &quot;PrivateDnsName&quot;: &quot;ip-172-31-25-111.ec2.internal&quot;, </div><div class="line">                    &quot;KeyName&quot;: &quot;keypair3&quot;, </div><div class="line">                    &quot;SecurityGroups&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                            &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;ClientToken&quot;: &quot;&quot;, </div><div class="line">                    &quot;SubnetId&quot;: &quot;subnet-09dda752&quot;, </div><div class="line">                    &quot;InstanceType&quot;: &quot;t2.micro&quot;, </div><div class="line">                    &quot;NetworkInterfaces&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;Status&quot;: &quot;in-use&quot;, </div><div class="line">                            &quot;MacAddress&quot;: &quot;0e:7e:53:40:0a:26&quot;, </div><div class="line">                            &quot;SourceDestCheck&quot;: true, </div><div class="line">                            &quot;VpcId&quot;: &quot;vpc-adb325cb&quot;, </div><div class="line">                            &quot;Description&quot;: &quot;&quot;, </div><div class="line">                            &quot;Association&quot;: &#123;</div><div class="line">                                &quot;PublicIp&quot;: &quot;52.207.16.176&quot;, </div><div class="line">                                &quot;PublicDnsName&quot;: &quot;ec2-52-207-16-176.compute-1.amazonaws.com&quot;, </div><div class="line">                                &quot;IpOwnerId&quot;: &quot;amazon&quot;</div><div class="line">                            &#125;, </div><div class="line">                            &quot;NetworkInterfaceId&quot;: &quot;eni-274dd2e2&quot;, </div><div class="line">                            &quot;PrivateIpAddresses&quot;: [</div><div class="line">                                &#123;</div><div class="line">                                    &quot;PrivateDnsName&quot;: &quot;ip-172-31-25-111.ec2.internal&quot;, </div><div class="line">                                    &quot;Association&quot;: &#123;</div><div class="line">                                        &quot;PublicIp&quot;: &quot;52.207.16.176&quot;, </div><div class="line">                                        &quot;PublicDnsName&quot;: &quot;ec2-52-207-16-176.compute-1.amazonaws.com&quot;, </div><div class="line">                                        &quot;IpOwnerId&quot;: &quot;amazon&quot;</div><div class="line">                                    &#125;, </div><div class="line">                                    &quot;Primary&quot;: true, </div><div class="line">                                    &quot;PrivateIpAddress&quot;: &quot;172.31.25.111&quot;</div><div class="line">                                &#125;</div><div class="line">                            ], </div><div class="line">                            &quot;PrivateDnsName&quot;: &quot;ip-172-31-25-111.ec2.internal&quot;, </div><div class="line">                            &quot;Attachment&quot;: &#123;</div><div class="line">                                &quot;Status&quot;: &quot;attached&quot;, </div><div class="line">                                &quot;DeviceIndex&quot;: 0, </div><div class="line">                                &quot;DeleteOnTermination&quot;: true, </div><div class="line">                                &quot;AttachmentId&quot;: &quot;eni-attach-7eccda21&quot;, </div><div class="line">                                &quot;AttachTime&quot;: &quot;2017-01-30T04:40:43.000Z&quot;</div><div class="line">                            &#125;, </div><div class="line">                            &quot;Groups&quot;: [</div><div class="line">                                &#123;</div><div class="line">                                    &quot;GroupName&quot;: &quot;mysg&quot;, </div><div class="line">                                    &quot;GroupId&quot;: &quot;sg-a364e4df&quot;</div><div class="line">                                &#125;</div><div class="line">                            ], </div><div class="line">                            &quot;Ipv6Addresses&quot;: [], </div><div class="line">                            &quot;SubnetId&quot;: &quot;subnet-09dda752&quot;, </div><div class="line">                            &quot;OwnerId&quot;: &quot;624990436890&quot;, </div><div class="line">                            &quot;PrivateIpAddress&quot;: &quot;172.31.25.111&quot;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;SourceDestCheck&quot;: true, </div><div class="line">                    &quot;Placement&quot;: &#123;</div><div class="line">                        &quot;Tenancy&quot;: &quot;default&quot;, </div><div class="line">                        &quot;GroupName&quot;: &quot;&quot;, </div><div class="line">                        &quot;AvailabilityZone&quot;: &quot;us-east-1b&quot;</div><div class="line">                    &#125;, </div><div class="line">                    &quot;Hypervisor&quot;: &quot;xen&quot;, </div><div class="line">                    &quot;BlockDeviceMappings&quot;: [</div><div class="line">                        &#123;</div><div class="line">                            &quot;DeviceName&quot;: &quot;/dev/xvda&quot;, </div><div class="line">                            &quot;Ebs&quot;: &#123;</div><div class="line">                                &quot;Status&quot;: &quot;attached&quot;, </div><div class="line">                                &quot;DeleteOnTermination&quot;: true, </div><div class="line">                                &quot;VolumeId&quot;: &quot;vol-049fb7df3a019542f&quot;, </div><div class="line">                                &quot;AttachTime&quot;: &quot;2017-01-30T04:40:44.000Z&quot;</div><div class="line">                            &#125;</div><div class="line">                        &#125;</div><div class="line">                    ], </div><div class="line">                    &quot;Architecture&quot;: &quot;x86_64&quot;, </div><div class="line">                    &quot;RootDeviceType&quot;: &quot;ebs&quot;, </div><div class="line">                    &quot;RootDeviceName&quot;: &quot;/dev/xvda&quot;, </div><div class="line">                    &quot;VirtualizationType&quot;: &quot;hvm&quot;, </div><div class="line">                    &quot;AmiLaunchIndex&quot;: 0</div><div class="line">                &#125;</div><div class="line">            ]</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="SSH-to-Instance-and-Check-the-info-1"><a href="#SSH-to-Instance-and-Check-the-info-1" class="headerlink" title="SSH to Instance and Check the info"></a>SSH to Instance and Check the info</h3><p>From above:<br>“PublicDnsName”: “ec2-52-207-16-176.compute-1.amazonaws.com”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div></pre></td><td class="code"><pre><div class="line">➜  Documents git:(master) ✗ ssh -i p.pem ec2-user@ec2-52-207-16-176.compute-1.amazonaws.com</div><div class="line"></div><div class="line">       __|  __|_  )</div><div class="line">       _|  (     /   Amazon Linux AMI</div><div class="line">      ___|\___|___|</div><div class="line"></div><div class="line">https://aws.amazon.com/amazon-linux-ami/2016.09-release-notes/</div><div class="line">[ec2-user@ip-172-31-25-111 ~]$ uname -a</div><div class="line">Linux ip-172-31-25-111 4.4.41-36.55.amzn1.x86_64 #1 SMP Wed Jan 18 01:03:26 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux</div><div class="line">[ec2-user@ip-172-31-25-111 ~]$ whoami</div><div class="line">ec2-user</div><div class="line">[ec2-user@ip-172-31-25-111 ~]$ date</div><div class="line">Mon Jan 30 05:49:27 UTC 2017</div><div class="line">[ec2-user@ip-172-31-25-111 ~]$ w</div><div class="line"> 05:49:28 up  1:08,  1 user,  load average: 0.00, 0.00, 0.00</div><div class="line">USER     TTY      FROM              LOGIN@   IDLE   JCPU   PCPU WHAT</div><div class="line">ec2-user pts/0    pool-98-109-151- 05:42    0.00s  0.00s  0.00s w</div><div class="line">[ec2-user@ip-172-31-25-111 ~]$ ifconfig -a</div><div class="line">eth0      Link encap:Ethernet  HWaddr 0E:7E:53:40:0A:26  </div><div class="line">          inet addr:172.31.25.111  Bcast:172.31.31.255  Mask:255.255.240.0</div><div class="line">          inet6 addr: fe80::c7e:53ff:fe40:a26/64 Scope:Link</div><div class="line">          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1</div><div class="line">          RX packets:4425 errors:0 dropped:0 overruns:0 frame:0</div><div class="line">          TX packets:2918 errors:0 dropped:0 overruns:0 carrier:0</div><div class="line">          collisions:0 txqueuelen:1000 </div><div class="line">          RX bytes:4922228 (4.6 MiB)  TX bytes:218230 (213.1 KiB)</div><div class="line"></div><div class="line">lo        Link encap:Local Loopback  </div><div class="line">          inet addr:127.0.0.1  Mask:255.0.0.0</div><div class="line">          inet6 addr: ::1/128 Scope:Host</div><div class="line">          UP LOOPBACK RUNNING  MTU:65536  Metric:1</div><div class="line">          RX packets:2 errors:0 dropped:0 overruns:0 frame:0</div><div class="line">          TX packets:2 errors:0 dropped:0 overruns:0 carrier:0</div><div class="line">          collisions:0 txqueuelen:1 </div><div class="line">          RX bytes:140 (140.0 b)  TX bytes:140 (140.0 b)</div><div class="line"></div><div class="line">[ec2-user@ip-172-31-25-111 ~]$ netstat -na</div><div class="line">Active Internet connections (servers and established)</div><div class="line">Proto Recv-Q Send-Q Local Address               Foreign Address             State      </div><div class="line">tcp        0      0 127.0.0.1:25                0.0.0.0:*                   LISTEN      </div><div class="line">tcp        0      0 0.0.0.0:111                 0.0.0.0:*                   LISTEN      </div><div class="line">tcp        0      0 0.0.0.0:52816               0.0.0.0:*                   LISTEN      </div><div class="line">tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      </div><div class="line">tcp        0    252 172.31.25.111:22            98.109.151.68:49300         ESTABLISHED </div><div class="line">tcp        0      0 :::50557                    :::*                        LISTEN      </div><div class="line">tcp        0      0 :::111                      :::*                        LISTEN      </div><div class="line">tcp        0      0 :::22                       :::*                        LISTEN      </div><div class="line">udp        0      0 0.0.0.0:33305               0.0.0.0:*                               </div><div class="line">udp        0      0 0.0.0.0:68                  0.0.0.0:*                               </div><div class="line">udp        0      0 0.0.0.0:111                 0.0.0.0:*                               </div><div class="line">udp        0      0 172.31.25.111:123           0.0.0.0:*                               </div><div class="line">udp        0      0 127.0.0.1:123               0.0.0.0:*                               </div><div class="line">udp        0      0 0.0.0.0:123                 0.0.0.0:*                               </div><div class="line">udp        0      0 0.0.0.0:694                 0.0.0.0:*                               </div><div class="line">udp        0      0 127.0.0.1:717               0.0.0.0:*                               </div><div class="line">udp        0      0 fe80::c7e:53ff:fe40:a26:546 :::*                                    </div><div class="line">udp        0      0 :::111                      :::*                                    </div><div class="line">udp        0      0 :::694                      :::*                                    </div><div class="line">udp        0      0 :::52689                    :::*                                    </div><div class="line">Active UNIX domain sockets (servers and established)</div><div class="line">Proto RefCnt Flags       Type       State         I-Node Path</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     8060   @/com/ubuntu/upstart</div><div class="line">unix  2      [ ACC ]     SEQPACKET  LISTENING     8322   @/org/kernel/udev/udevd</div><div class="line">unix  11     [ ]         DGRAM                    9389   /dev/log</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     9844   /var/run/rpcbind.sock</div><div class="line">unix  2      [ ACC ]     STREAM     LISTENING     10017  /var/run/dbus/system_bus_socket</div><div class="line">unix  2      [ ]         DGRAM                    11085  </div><div class="line">unix  2      [ ]         DGRAM                    10973  </div><div class="line">unix  3      [ ]         STREAM     CONNECTED     10025  </div><div class="line">unix  3      [ ]         DGRAM                    8330   </div><div class="line">unix  3      [ ]         STREAM     CONNECTED     11661  </div><div class="line">unix  3      [ ]         DGRAM                    8331   </div><div class="line">unix  2      [ ]         DGRAM                    11656  </div><div class="line">unix  3      [ ]         STREAM     CONNECTED     11660  </div><div class="line">unix  3      [ ]         STREAM     CONNECTED     10026  /var/run/dbus/system_bus_socket</div><div class="line">unix  2      [ ]         DGRAM                    10150  </div><div class="line">unix  2      [ ]         DGRAM                    10608  </div><div class="line">unix  2      [ ]         DGRAM                    9920   </div><div class="line">unix  2      [ ]         DGRAM                    10506  </div><div class="line">unix  3      [ ]         STREAM     CONNECTED     10020  </div><div class="line">unix  2      [ ]         DGRAM                    10587  </div><div class="line">unix  2      [ ]         DGRAM                    10629  </div><div class="line">unix  3      [ ]         STREAM     CONNECTED     10021</div></pre></td></tr></table></figure>
+<h3 id="Display-the-partition-table-currently-mounted-filesystems-disk-space-1"><a href="#Display-the-partition-table-currently-mounted-filesystems-disk-space-1" class="headerlink" title="Display the partition table, currently mounted filesystems, disk space"></a>Display the partition table, currently mounted filesystems, disk space</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">[ec2-user@ip-172-31-25-111 ~]$ sudo su</div><div class="line">[root@ip-172-31-25-111 ec2-user]# fdisk -l</div><div class="line">WARNING: fdisk GPT support is currently new, and therefore in an experimental phase. Use at your own discretion.</div><div class="line"></div><div class="line">Disk /dev/xvda: 8589 MB, 8589934592 bytes, 16777216 sectors</div><div class="line">Units = sectors of 1 * 512 = 512 bytes</div><div class="line">Sector size (logical/physical): 512 bytes / 512 bytes</div><div class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</div><div class="line">Disk label type: gpt</div><div class="line"></div><div class="line"></div><div class="line">#         Start          End    Size  Type            Name</div><div class="line"> 1         4096     16777182      8G  Linux filesyste Linux</div><div class="line">128         2048         4095      1M  BIOS boot parti BIOS Boot Partition</div><div class="line">[root@ip-172-31-25-111 ec2-user]# </div><div class="line">[root@ip-172-31-25-111 ec2-user]# df -h</div><div class="line">Filesystem      Size  Used Avail Use% Mounted on</div><div class="line">devtmpfs        488M   56K  488M   1% /dev</div><div class="line">tmpfs           498M     0  498M   0% /dev/shm</div><div class="line">/dev/xvda1      7.8G  984M  6.7G  13% /</div><div class="line">[root@ip-172-31-25-111 ec2-user]# mount</div><div class="line">proc on /proc type proc (rw,relatime)</div><div class="line">sysfs on /sys type sysfs (rw,relatime)</div><div class="line">devtmpfs on /dev type devtmpfs (rw,relatime,size=498764k,nr_inodes=124691,mode=755)</div><div class="line">devpts on /dev/pts type devpts (rw,relatime,gid=5,mode=620,ptmxmode=000)</div><div class="line">tmpfs on /dev/shm type tmpfs (rw,relatime)</div><div class="line">/dev/xvda1 on / type ext4 (rw,noatime,data=ordered)</div><div class="line">none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)</div></pre></td></tr></table></figure>
+<h2 id="The-Difference-of-Two-Instance"><a href="#The-Difference-of-Two-Instance" class="headerlink" title="The Difference of Two Instance"></a>The Difference of Two Instance</h2><ol>
+<li>The SSH access user names.</li>
+<li>The orders which are used to view the disk info.</li>
+<li>Instance type.</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/05/19/Install and Configure AWS Tools/">Install and Configure AWS Tools</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Ankai Liang</a></p>
+        <p><span>Created:</span>2017-05-19, 03:32:39</p>
+        <p><span>Updated:</span>2017-08-17, 02:14:03</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/05/19/Install and Configure AWS Tools/" title="Install and Configure AWS Tools">https://AnkaiLiang.github.io/2017/05/19/Install and Configure AWS Tools/</a>
+            <span class="copy-path" data-clipboard-text="From https://AnkaiLiang.github.io/2017/05/19/Install and Configure AWS Tools/　　By Ankai Liang" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/08/16/Using-the-AWS-CLI-to-set-instance/">
+                    Using the AWS-CLI to Set Instance
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/19/hello-world/">
+                    Hello World
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CS615-Assignment1"><span class="toc-number">1.</span> <span class="toc-text">CS615 Assignment1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-AWS-Tool"><span class="toc-number">1.0.1.</span> <span class="toc-text">Install AWS Tool</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AWS-Command-Line-Configuration"><span class="toc-number">1.0.2.</span> <span class="toc-text">AWS Command Line Configuration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Creating-a-Key-Pair-and-setting-the-chomod-mod"><span class="toc-number">1.0.3.</span> <span class="toc-text">Creating a Key Pair and setting the chomod mod</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adding-Rules-to-Your-Security-Group"><span class="toc-number">1.0.4.</span> <span class="toc-text">Adding Rules to Your Security Group</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CentOS"><span class="toc-number">1.1.</span> <span class="toc-text">CentOS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Find-images-id-get-ami-50ecc847"><span class="toc-number">1.1.1.</span> <span class="toc-text">Find images id (get ami-50ecc847)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-a-instance"><span class="toc-number">1.1.2.</span> <span class="toc-text">Run a instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-Tag-for-my-Instance"><span class="toc-number">1.1.3.</span> <span class="toc-text">Create a Tag for my Instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Get-the-info-of-my-Instance"><span class="toc-number">1.1.4.</span> <span class="toc-text">Get the info of my Instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-to-Instance-and-Check-the-info"><span class="toc-number">1.1.5.</span> <span class="toc-text">SSH to Instance and Check the info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Display-the-partition-table-currently-mounted-filesystems-disk-space"><span class="toc-number">1.1.6.</span> <span class="toc-text">Display the partition table, currently mounted filesystems, disk space</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ubuntu"><span class="toc-number">1.2.</span> <span class="toc-text">Ubuntu</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Images-Select"><span class="toc-number">1.2.1.</span> <span class="toc-text">Images Select</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-a-instance-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">Run a instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Get-the-info-of-my-Instance-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">Get the info of my Instance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-to-Instance-and-Check-the-info-1"><span class="toc-number">1.2.4.</span> <span class="toc-text">SSH to Instance and Check the info</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Display-the-partition-table-currently-mounted-filesystems-disk-space-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">Display the partition table, currently mounted filesystems, disk space</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Difference-of-Two-Instance"><span class="toc-number">1.3.</span> <span class="toc-text">The Difference of Two Instance</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+<script>
+    yiliaConfig.toc = ["Hide", "Show", !!"false"];
+</script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Install and Configure AWS Tools　| Ankai Liang's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/05/19/Install and Configure AWS Tools/" data-title="Install and Configure AWS Tools" data-url="https://AnkaiLiang.github.io/2017/05/19/Install and Configure AWS Tools/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"ankailiang"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/08/16/Using-the-AWS-CLI-to-set-instance/" title="Pre: Using the AWS-CLI to Set Instance">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/19/hello-world/" title="Next: Hello World">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/Text-processing-in-Linux/">Afewmore-a Tool of Ec2--How to Write a Shell Tool</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/afewmore-A-tool-of-ec2-how-to-write-a-shell-tool/">Afewmore-a Tool of Ec2--How to Write a Shell Tool</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/16/tcpdump-1-DNS/">Tcpdump(1) DNS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/16/Using-Manages-packages-in-Linux/">Using Manages Packages in Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/16/Using-the-AWS-CLI-to-set-instance/">Using the AWS-CLI to Set Instance</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/Install and Configure AWS Tools/">Install and Configure AWS Tools</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Ankai Liang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >Site Visitors: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">Page Hits: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
