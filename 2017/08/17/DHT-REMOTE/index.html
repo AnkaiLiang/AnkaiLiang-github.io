@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="Ankai Liang" />
+
+
+
+<meta name="description" content="DHT-REMOTE">
+<meta name="keywords" content="Distrubute System">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DHT-REMOTE">
+<meta property="og:url" content="https://AnkaiLiang.github.io/2017/08/17/DHT-REMOTE/index.html">
+<meta property="og:site_name" content="Ankai Liang&#39;s Blog">
+<meta property="og:description" content="DHT-REMOTE">
+<meta property="og:updated_time" content="2017-08-18T00:03:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DHT-REMOTE">
+<meta name="twitter:description" content="DHT-REMOTE">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="Ankai Liang&#39;s Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>DHT-REMOTE | Ankai Liang&#39;s Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Ankai Liang</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">强而不燥，弱而不虚</p>
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Friends</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/archives/">All Article</a></li>
+                        
+                            <li><a href="/tags/">tags</a></li>
+                        
+                            <li><a href="/about/">Resume</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="/lakeandgod@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" href="http://weibo.com/1783077873/profile?rightmod=1&wvr=6&mod=personnumber" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/ankaiLiang" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" href="https://www.facebook.com/lakeandgod" title="Facebook"></a>
+                            
+                                <a class="fa LinkedIn" href="https://www.linkedin.com/in/ankai-liang-a774b3119?trk=hp-identity-name" title="LinkedIn"></a>
+                            
+                                <a class="fa Instagram" href="https://www.instagram.com/ankai_liang/" title="Instagram"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AI/">AI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Distrubute-System/">Distrubute System</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/System-Administration/">System Administration</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://jayveehe.github.io">Jayvee He的博客</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://wangzi6147.github.io">wangzi的博客</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">true</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Ankai Liang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Ankai Liang</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">强而不燥，弱而不虚</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/archives/">All Article</a></li>
+                
+                    <li><a href="/tags/">tags</a></li>
+                
+                    <li><a href="/about/">Resume</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="/lakeandgod@gmail.com" title="Email"></a>
+                            
+                                <a class="fa 新浪微博" target="_blank" href="http://weibo.com/1783077873/profile?rightmod=1&wvr=6&mod=personnumber" title="新浪微博"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/ankaiLiang" title="GitHub"></a>
+                            
+                                <a class="fa Facebook" target="_blank" href="https://www.facebook.com/lakeandgod" title="Facebook"></a>
+                            
+                                <a class="fa LinkedIn" target="_blank" href="https://www.linkedin.com/in/ankai-liang-a774b3119?trk=hp-identity-name" title="LinkedIn"></a>
+                            
+                                <a class="fa Instagram" target="_blank" href="https://www.instagram.com/ankai_liang/" title="Instagram"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-DHT-REMOTE" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/08/17/DHT-REMOTE/" class="article-date">
+      <time datetime="2017-08-18T00:00:42.000Z" itemprop="datePublished">2017-08-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      DHT-REMOTE
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Distrubute-System/">Distrubute System</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="DHT-REMOTE"><a href="#DHT-REMOTE" class="headerlink" title="DHT-REMOTE"></a>DHT-REMOTE</h1><ul>
+<li>Ankai Liang</li>
+<li>10411998</li>
+<li>CS 549 Assignment4</li>
+<li><a href="https://github.com/AnkaiLiang/dht-remote" target="_blank" rel="external">code link</a></li>
+</ul>
+<h2 id="Code-Explanation"><a href="#Code-Explanation" class="headerlink" title="Code Explanation"></a>Code Explanation</h2><p>On this assisgnment, we extend the program we did last time with a push-based protocol. So there are a lot code snippets are the same as before. I just list the new sippets I added this time.</p>
+<h3 id="ControllerClient-java"><a href="#ControllerClient-java" class="headerlink" title="ControllerClient.java"></a>ControllerClient.java</h3><p>Create a instance of ClientEndpointConfig, using <code>CommandLineEncoder</code> as encoder.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// TODO configure the client to use proper encoder for messages sent to server</div><div class="line">private final ClientEndpointConfig cec = ClientEndpointConfig.Builder.create().</div><div class="line">		encoders(Arrays.asList(CommandLineEncoder.class)).build();</div></pre></td></tr></table></figure>
+<p>When we need to connect to a remote node.</p>
+<ol>
+<li>Create a instance of <code>ClientManager</code> </li>
+<li>Keep looping to wait for the ack from the remote node until got the ack.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">public void connect(URI uri) throws DeploymentException, IOException &#123;</div><div class="line">	try &#123;</div><div class="line">		shell.msg(&quot;Requesting control of node at &quot; + uri.toString() + &quot;...&quot;);</div><div class="line">		// TODO done make the connection request</div><div class="line">		ClientManager clientManager = ClientManager.createClient(ContainerProvider.getWebSocketContainer());</div><div class="line">		session = clientManager.connectToServer(this, cec, uri);</div><div class="line">		while (true) &#123;</div><div class="line">			try &#123;</div><div class="line">				// Synchronize with receipt of an ack from the remote node.</div><div class="line">				boolean connected = messageLatch.await(100, TimeUnit.SECONDS);</div><div class="line">				// TODO done If we are connected, a new toplevel shell has been pushed, execute its CLI.</div><div class="line">				// Be sure to return when done, to exit the loop.</div><div class="line">				if (connected)&#123;</div><div class="line">					shellManager.getCurrentShell().cli();</div><div class="line">					break;</div><div class="line">				&#125;</div><div class="line">			&#125; catch (InterruptedException e) &#123;</div><div class="line">				// Keep on waiting for the specified time interval</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125; catch (IOException e) &#123;</div><div class="line">		shell.err(e);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>If the session has been created, add this controllclient as message handler, and cache the session.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void onOpen(Session session, EndpointConfig config) &#123;</div><div class="line">	// TODO session created, add a message handler for receiving communication from server.</div><div class="line">	// We should also cache the session for use by some of the other operations.</div><div class="line">	session.addMessageHandler(this);</div><div class="line">	this.session = session;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>If the initializing has not done:</p>
+<ol>
+<li>if got the ack, means request has been accepted. Create a ProxyShell and add this ProxyShell to the stack of Shell. Set the local running shell is this ProxyShell. Flag the initializing has been done.</li>
+<li>If the server rejects our request, they will just close the channel.</li>
+</ol>
+<p>If the initializing has been done, just running the top Shell on stack and via the message to it. </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void onMessage(String message) &#123;</div><div class="line">	if (initializing) &#123;</div><div class="line">		if (SessionManager.ACK.equals(message)) &#123;</div><div class="line">			/*</div><div class="line">			 * TODO done server has accepted our remote control request, push a proxy shell on the shell stack</div><div class="line">			 * and flag that initialization has finished (allowing the UI thread to continue).</div><div class="line">			 * Make sure to replace the cached shell in this callback with the new proxy shell!</div><div class="line">			 * </div><div class="line">			 * If the server rejects our request, they will just close the channel.</div><div class="line">			 */</div><div class="line">			try &#123;</div><div class="line">				shell.msgln(&quot;request accepted.&quot;);</div><div class="line">			&#125; catch (IOException e) &#123;</div><div class="line">				// TODO Auto-generated catch block</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">			shell = ProxyShell.createRemoteController(shell, session.getBasicRemote());</div><div class="line">			shellManager.addShell(shell);</div><div class="line">			endInitialization();</div><div class="line">		&#125; else &#123;</div><div class="line">			throw new IllegalStateException(&quot;Unexpected response to remote control request: &quot; + message);</div><div class="line">		&#125;</div><div class="line">	&#125; else &#123;</div><div class="line">		// TODO done provide the message to the shell</div><div class="line">		try &#123;</div><div class="line">			shellManager.getCurrentShell().msg(message);</div><div class="line">		&#125; catch (IOException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>When shotdown, flag the end of initializing and close the session.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">	protected void shutdown() throws IOException &#123;</div><div class="line">		/*</div><div class="line">		 * TODO Shutdown initiated by error or closure of the connection.  Three cases: </div><div class="line">		 * 1. We are still initializing when this happens (need to unblock the client thread).</div><div class="line">		 * 2. We are running an on-going remote control session (need to remove the proxy shell).</div><div class="line">		 * 3. The remote control session has terminated (which caused the channel to be closed).</div><div class="line">		 */</div><div class="line">		if (initializing) </div><div class="line">			endInitialization();</div><div class="line">		else if (session.isOpen())</div><div class="line">			session.close();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="ControllerServer-java"><a href="#ControllerServer-java" class="headerlink" title="ControllerServer.java"></a>ControllerServer.java</h3><p>If we recive the “quit” message, we close the the current session. Else, we add the commandLine to the input of the current shell.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">@OnMessage</div><div class="line">   public void onMessage(String[] commandLine) &#123;</div><div class="line">	if (initializing) &#123;</div><div class="line">		throw new IllegalStateException(&quot;Communication from client before ack of remote control request: &quot; + commandLine[0]);</div><div class="line">	&#125; else if (commandLine.length &gt; 0 &amp;&amp; IShell.QUIT.equals(commandLine[0])) &#123;</div><div class="line">		/*</div><div class="line">		 * TODO Stop the current toplevel (local) shell.  It is sufficient to close the session,</div><div class="line">		 * which will trigger a callback on onClose() on both sides of the connection.</div><div class="line">		 */</div><div class="line">		sessionManager.closeCurrentSession();</div><div class="line">	&#125; else &#123;</div><div class="line">   		/*</div><div class="line">   		 * TODO add the commandLine to the input of the current shell</div><div class="line">   		 */</div><div class="line">		shellManager.getCurrentShell().addCommandLine(commandLine);</div><div class="line">	&#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>ControllerServer @ServerEndpoint (include config for decoders), @OnOpen,@OnMessage, @OnClose. There are the annotates of corresponding methods, which relate to the protocol of web socket.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@ServerEndpoint(</div><div class="line">		value = &quot;/control/&#123;client&#125;&quot;,</div><div class="line">		decoders = CommandLineDecoder.class</div><div class="line">		)</div><div class="line">public class ControllerServer &#123;</div><div class="line">...</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">   @OnError</div><div class="line">public void onError(Throwable t) &#123;</div><div class="line">...</div><div class="line"></div><div class="line">@OnClose</div><div class="line">public void onClose(Session session) &#123;</div><div class="line">...</div><div class="line"></div><div class="line">@OnOpen</div><div class="line">   public void onOpen(Session session, @PathParam(&quot;client&quot;) String client) throws IOException &#123;</div></pre></td></tr></table></figure>
+<h3 id="ProxyContext-java"><a href="#ProxyContext-java" class="headerlink" title="ProxyContext.java"></a>ProxyContext.java</h3><p>Override these three method in ContextBase. Implement the text display on remote client console.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">public void msg(String m) throws IOException &#123;</div><div class="line">	// TODO display the message on the remote client console</div><div class="line">	sender.sendText(m);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public void msgln(String m) throws IOException &#123;</div><div class="line">	// TODO display the message on the remote client console</div><div class="line">	sender.sendText(m + &apos;\n&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@Override</div><div class="line">public void err(Throwable t) throws IOException &#123;</div><div class="line">	// TODO print the stack trace on the remote client console</div><div class="line">	sender.sendText(t.getMessage() + &apos;\n&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="SessionManager-java"><a href="#SessionManager-java" class="headerlink" title="SessionManager.java"></a>SessionManager.java</h3><p>When we accept the remote control request, we will create a local shell with Proxy context on the server endpoint. Then push that shell on the stack, flag the end of initializing and send the ack to response the remote node.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">public void acceptSession() throws IOException &#123;</div><div class="line">	lock.lock();</div><div class="line">	try &#123;</div><div class="line">		/*</div><div class="line">		 *  TODO We are accepting a remote control request.  Push a local shell with a proxy context</div><div class="line">		 *  on the shell stack and flag that initialization has completed.  Confirm acceptance of the </div><div class="line">		 *  remote control request by sending an ACK to the client.  The CLI of the newly installed shell</div><div class="line">		 *  will be executed by the underlying CLI as part of the &quot;accept&quot; command.</div><div class="line">		 */</div><div class="line">		ProxyContext proxyContext = ProxyContext.createProxyContext(currentServer.getSession().getBasicRemote());</div><div class="line">		LocalShell localshell = LocalShell.createRemotelyControlled(ShellManager.</div><div class="line">				getShellManager().</div><div class="line">				getCurrentShell().</div><div class="line">				getLocal(), proxyContext);</div><div class="line">		ShellManager.getShellManager().addShell(localshell);</div><div class="line">		currentServer.endInitialization();</div><div class="line">		proxyContext.msg(SessionManager.ACK);</div><div class="line">	&#125; finally &#123;</div><div class="line">		lock.unlock();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>When reject remote control request, call the session <code>close()</code> method. It’ll call the corresponding Onclose method on both sides to deal with the other cleaning task.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public void rejectSession() &#123;</div><div class="line">	lock.lock();</div><div class="line">	try &#123;</div><div class="line">		// TODO reject remote control request by closing the session (provide a reason!)</div><div class="line">		CloseReason reason = new CloseReason(CloseCodes.CANNOT_ACCEPT, &quot;request rejected&quot;);</div><div class="line">		currentServer.getSession().close(reason);</div><div class="line">		currentServer = null;</div><div class="line">	&#125; catch (IOException e) &#123;</div><div class="line">		// TODO Auto-generated catch block</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125; finally &#123;</div><div class="line">		lock.unlock();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>It’s similar with above. The reason is different.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">public void closeCurrentSession() &#123;</div><div class="line">	lock.lock();</div><div class="line">	try &#123;</div><div class="line">		// TODO normal shutdown of remote control session (provide a reason!)</div><div class="line">		CloseReason reason = new CloseReason(CloseCodes.NORMAL_CLOSURE, null);</div><div class="line">		currentServer.getSession().close(reason);</div><div class="line">		currentServer = null;</div><div class="line">	&#125; catch (IOException e) &#123;</div><div class="line">		// TODO Auto-generated catch block</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125; finally &#123;</div><div class="line">		lock.unlock();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="ShellManaager-java"><a href="#ShellManaager-java" class="headerlink" title="ShellManaager.java"></a>ShellManaager.java</h3><p>Call the corresponding method on <code>Sessinmanager</code> with the order ‘accept’ or ‘reject’. If the order is ‘accept’, run the top shell on the stack of shell.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * TODO Accept the pending session (see SessionManager) and </div><div class="line"> * start running the CLI for the new shell that will have been</div><div class="line"> * pushed on the shell stack.</div><div class="line"> */</div><div class="line">protected void accept(String[] inputs) throws IOException &#123;</div><div class="line">	if (inputs.length != 1) &#123;</div><div class="line">		msgln(&quot;Usage: accept&quot;);</div><div class="line">	&#125; else &#123;</div><div class="line">		// TODO</div><div class="line">		sessionManager.acceptSession();</div><div class="line">		shellManager.getCurrentShell().cli();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * TODO Reject and remove the pending session (see SessionManager).</div><div class="line"> */</div><div class="line">protected void reject(String[] inputs) throws IOException &#123;</div><div class="line">	if (inputs.length != 1) &#123;</div><div class="line">		msgln(&quot;Usage: reject&quot;);</div><div class="line">	&#125; else &#123;</div><div class="line">		// TODO</div><div class="line">		sessionManager.rejectSession();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><ol>
+<li>Basic connect, reject, accept. <ul>
+<li>I create 3 different nodes(17,25,45). </li>
+<li>node 17 connect to node 25, reject and accept.</li>
+</ul>
+</li>
+<li>Connect while already connected (controlling remote node).<ul>
+<li>node 17 connect to node 25, node 25 accept.</li>
+<li>node 25(remote controlled by proxy shell on node 17) connect to node 45, node 45 accept.</li>
+</ul>
+</li>
+<li>Accept while already connected (controlling remote node)<ul>
+<li>node 17 connect to node 25, node 25 accept.</li>
+<li>node 45 connect to node 17, node 17 accept.</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2017/08/17/DHT-REMOTE/">DHT-REMOTE</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Ankai Liang</a></p>
+        <p><span>Created:</span>2017-08-17, 20:00:42</p>
+        <p><span>Updated:</span>2017-08-17, 20:03:32</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2017/08/17/DHT-REMOTE/" title="DHT-REMOTE">https://AnkaiLiang.github.io/2017/08/17/DHT-REMOTE/</a>
+            <span class="copy-path" data-clipboard-text="From https://AnkaiLiang.github.io/2017/08/17/DHT-REMOTE/　　By Ankai Liang" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/08/17/Page-Rank-Hadoop/">
+                    Page Rank - Hadoop
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DHT-REMOTE"><span class="toc-number">1.</span> <span class="toc-text">DHT-REMOTE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-Explanation"><span class="toc-number">1.1.</span> <span class="toc-text">Code Explanation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ControllerClient-java"><span class="toc-number">1.1.1.</span> <span class="toc-text">ControllerClient.java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ControllerServer-java"><span class="toc-number">1.1.2.</span> <span class="toc-text">ControllerServer.java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ProxyContext-java"><span class="toc-number">1.1.3.</span> <span class="toc-text">ProxyContext.java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SessionManager-java"><span class="toc-number">1.1.4.</span> <span class="toc-text">SessionManager.java</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ShellManaager-java"><span class="toc-number">1.1.5.</span> <span class="toc-text">ShellManaager.java</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Test"><span class="toc-number">1.2.</span> <span class="toc-text">Test</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+<script>
+    yiliaConfig.toc = ["Hide", "Show", !!"false"];
+</script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"DHT-REMOTE　| Ankai Liang's Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/08/17/DHT-REMOTE/" data-title="DHT-REMOTE" data-url="https://AnkaiLiang.github.io/2017/08/17/DHT-REMOTE/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"ankailiang"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/08/17/Page-Rank-Hadoop/" title="Next: Page Rank - Hadoop">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/DHT-REMOTE/">DHT-REMOTE</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/Page-Rank-Hadoop/">Page Rank - Hadoop</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/RushHour/">RushHour</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/Text-processing-in-Linux/">Text-Processing</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/17/afewmore-A-tool-of-ec2-how-to-write-a-shell-tool/">Afewmore</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/16/tcpdump-1-DNS/">Tcpdump(1) DNS</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/16/Using-Manages-packages-in-Linux/">Using Manages Packages in Linux</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/16/Using-the-AWS-CLI-to-set-instance/">Using the AWS-CLI to Set Instance</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/19/Install and Configure AWS Tools/">Install and Configure AWS Tools</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 Ankai Liang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >Site Visitors: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">Page Hits: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
